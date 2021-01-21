@@ -13,78 +13,59 @@ speed.addEventListener("input", (e) => {
    speedNum = 250 / e.target.value;
 });
 
-write();
+write(txt, txt.length, 1);
 
-function write() {
+function write(array, length, x) {
    const interval = setInterval(() => {
-      text.innerText = txt.slice(0, idx);
       idx++;
+      text.innerText = array.slice(0, idx);
 
-      if (idx >= txt.length) {
+      if (idx >= length) {
          clearInterval(interval);
-         unWrite();
+
+         switch (x) {
+            case 1:
+               unWrite(txt, 1, 1);
+               break;
+            case 2:
+               unWrite(txt2, 6, 2);
+               break;
+            case 3:
+               unWrite(txt3, 1, 3);
+               break;
+
+            default:
+               alert("default case executed");
+         }
       }
    }, speedNum);
 }
 
-function unWrite() {
+function unWrite(array, length, x) {
    const interval = setInterval(() => {
-      text.innerText = txt.slice(0, idx);
+      text.innerText = array.slice(0, idx);
       idx--;
 
-      if (idx == 1) {
+      if (idx == length) {
          clearInterval(interval);
-         write2();
+         if (idx >= length) {
+            clearInterval(interval);
+
+            switch (x) {
+               case 1:
+                  write(txt2, txt2.length, 2);
+                  break;
+               case 2:
+                  write(txt3, txt3.length, 3);
+                  break;
+               case 3:
+                  write(txt, txt.length, 1);
+                  break;
+
+               default:
+                  alert("default case executed");
+            }
+         }
       }
    }, speedNum);
 }
-
-function write2() {
-   const interval = setInterval(() => {
-      text.innerText = txt2.slice(0, idx);
-      idx++;
-
-      if (idx >= txt2.length) {
-         clearInterval(interval);
-         unWrite2();
-      }
-   }, speedNum);
-}
-
-function unWrite2() {
-   const interval = setInterval(() => {
-      text.innerText = txt2.slice(0, idx);
-      idx--;
-
-      if (idx == 6) {
-         clearInterval(interval);
-         write3();
-      }
-   }, speedNum);
-}
-
-function write3() {
-   const interval = setInterval(() => {
-      text.innerText = txt3.slice(0, idx);
-      idx++;
-
-      if (idx >= txt3.length) {
-         clearInterval(interval);
-         unWrite3();
-      }
-   }, speedNum);
-}
-
-function unWrite3() {
-   const interval = setInterval(() => {
-      text.innerText = txt3.slice(0, idx);
-      idx--;
-
-      if (idx == 1) {
-         clearInterval(interval);
-         write();
-      }
-   }, speedNum);
-}
-
-
