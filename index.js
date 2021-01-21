@@ -3,17 +3,15 @@ const speed = document.getElementById("speed");
 
 let idx = 1;
 let speedNum = 100 / speed.value;
-const txt = "We love typewriting effect !";
+const txt1 = "We love typewriting effect !";
 const txt2 = "What a wonderful effect !";
 const txt3 = "What a beautiful style !";
-
-text.classList.add("typo");
 
 speed.addEventListener("input", (e) => {
    speedNum = 250 / e.target.value;
 });
 
-write(txt, txt.length, 1);
+write(txt1, txt1.length, 1);
 
 function write(array, length, x) {
    const interval = setInterval(() => {
@@ -25,10 +23,10 @@ function write(array, length, x) {
 
          switch (x) {
             case 1:
-               unWrite(txt, 1, 1);
+               unWrite(txt1, 1, 1);
                break;
             case 2:
-               unWrite(txt2, 6, 2);
+               unWrite(txt2, 6, 2); // unwrite till 6th charecter
                break;
             case 3:
                unWrite(txt3, 1, 3);
@@ -59,7 +57,7 @@ function unWrite(array, length, x) {
                   write(txt3, txt3.length, 3);
                   break;
                case 3:
-                  write(txt, txt.length, 1);
+                  write(txt1, txt1.length, 1);
                   break;
 
                default:
