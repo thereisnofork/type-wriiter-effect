@@ -2,7 +2,43 @@
    margin: 0%;
    padding: 0%;
    box-sizing: border-box;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+body {
+   background-color: darkgoldenrod;
+}
+#box {
+   color: wheat;
+   background-color: darkolivegreen;
+   width: fit-content;
+   padding: 5px 10px;
+   border-radius: 3px;
+   margin: 70px auto;
+   box-shadow: 1px 3px 15px -5px rgba(0, 0, 0, 0.5);
+}
+#speed {
+   text-align: center;
+   width: 45px;
+   border: 0;
+   background-color: whitesmoke;
+   border-radius: 1px;
+   font-weight: 600;
+}
 
-
+#speed:focus {
+   outline: none;
+}
+.typo {
+   width: 520px;
+   margin: 35vh auto 0;
+   display: flex;
+   justify-content: start;
+   color: white;
+   background-color: chocolate;
+   font-size: 35px;
+   border: 2px dashed white;
+   border-radius: 5px;
+   padding: 3px 6px;
+   box-shadow: 1px 3px 15px -5px rgba(0, 0, 0, 0.5);
+}
