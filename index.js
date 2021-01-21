@@ -87,14 +87,4 @@ function unWrite3() {
    }, speedNum);
 }
 
-function write(a, b) {
-   const interval = setInterval(() => {
-      text.innerText = a.slice(0, idx);
-      idx++;
 
-      if (idx >= a.length) {
-         clearInterval(interval);
-         b;
-      }
-   }, speedNum);
-}
